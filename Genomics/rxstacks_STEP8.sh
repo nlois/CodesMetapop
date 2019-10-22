@@ -1,0 +1,2 @@
+mkdir ~/post_rxstacks_assembly
+/Users/user/documents/stacks/bin/rxstacks -b 1 -P ~/denovo_pop -o ~/post_rxstacks_assembly --conf_lim 0.25 --prune_haplo --model_type bounded --bound_high 0.1 --lnl_lim -40.0 --lnl_dist -t 8 --verbose

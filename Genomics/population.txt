@@ -1,0 +1,1 @@
+/users/user/documents/Stacks/bin/populations -b 1 -P ~/rxstacks_refmap -O ~/Pop_ad_Mu -M ~/pop_ad_Mu.txt -r 0.8 -p 1 -m 20 -t 15 --fstats --write_single_snp --structure --vcf --min_maf 0.05 &

@@ -1,0 +1,37 @@
+http://cichlid.gurdon.cam.ac.uk/fineRADstructure.html
+No pude instalarlo porque me falta GSL o algo asi… Revisar!!!
+
+export PATH=/programs/fineRADstructure/bin:$PATH
+python ./Stacks2fineRAD.py -i batch_1.haplotypes.tsv -n 10 -m 50
+
+-n is SNPs allowed per locus
+-m is individual level missing data
+
+changed script based on error
+
+RADpainter paint batch_1.haplotypes.tsv.fineRADpainter.lociFilt.samples50%missFilt.txt
+
+finestructure -x 100000 -y 100000 -z 1000 batch_1.haplotypes.tsv.fineRADpainter.lociFilt.samples50%missFilt_chunks.out batch_1.haplotypes.tsv.fineRADpainter.lociFilt.samples50%missFilt_chunks.mcmc.xml
+
+error
+This is the symptom if individual names start with a number
+
+finestructure -m T -x 10000 batch_1.haplotypes.tsv.fineRADpainter.lociFilt.samples50%missFilt_chunks.out batch_1.haplotypes.tsv.fineRADpainter.lociFilt.samples50%missFilt_chunks.mcmc.xml batch_1.haplotypes.tsv.fineRADpainter.lociFilt.samples50%missFilt_chunks.mcmcTree.xml
+
+python ./Stacks2fineRAD.py -i MALVINAS.haplotypes.tsv -n 10 -m 50
+python ./Stacks2fineRAD.py -i IDLE.haplotypes.tsv -n 10 -m 50
+
+RADpainter paint MALVINAS.haplotypes.tsv.fineRADpainter.lociFilt.samples50%missFilt.txt &
+RADpainter paint IDLE.haplotypes.tsv.fineRADpainter.lociFilt.samples50%missFilt.txt &
+
+
+finestructure -x 100000 -y 100000 -z 1000 MALVINAS.haplotypes.tsv.fineRADpainter.lociFilt.samples50%missFilt_chunks.out MALVINAS.haplotypes.tsv.fineRADpainter.lociFilt.samples50%missFilt_chunks.mcmc.xml
+finestructure -x 100000 -y 100000 -z 1000 IDLE.haplotypes.tsv.fineRADpainter.lociFilt.samples50%missFilt_chunks.out  IDLE.haplotypes.tsv.fineRADpainter.lociFilt.samples50%missFilt_chunks.mcmc.xml
+
+
+finestructure -m T -x 10000 MALVINAS.haplotypes.tsv.fineRADpainter.lociFilt.samples50%missFilt_chunks.out MALVINAS.haplotypes.tsv.fineRADpainter.lociFilt.samples50%missFilt_chunks.mcmc.xml MALVINAS.haplotypes.tsv.fineRADpainter.lociFilt.samples50%missFilt_chunks.mcmcTree.xml &
+finestructure -m T -x 10000 IDLE.haplotypes.tsv.fineRADpainter.lociFilt.samples50%missFilt_chunks.out IDLE.haplotypes.tsv.fineRADpainter.lociFilt.samples50%missFilt_chunks.mcmc.xml IDLE.haplotypes.tsv.fineRADpainter.lociFilt.samples50%missFilt_chunks.mcmcTree.xml &
+
+
+###I've been working on single SNP files (the haplotype file is also filtered by single SNPs).
+

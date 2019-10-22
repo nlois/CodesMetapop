@@ -1,0 +1,10 @@
+mkdir /users/user/documents/Rockhopper
+
+HOME=/users/user/documents/Rockhopper
+export HOME
+
+mkdir ~/data
+mkdir ~/code
+mkdir ~/filtered
+mkdir ~/demultiplexed
+

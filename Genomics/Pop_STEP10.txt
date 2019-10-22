@@ -1,0 +1,3 @@
+/Users/user/documents/stacks/bin/populations -b 1 -P ~/denovo_pop -M ./popmap_menos.txt -r 0.95 -p 1 -m 10  -t 8 --write_single_snp --structure --vcf --genepop -a 0.14
+
+# Uso 0,14 en a (minimum minor allele frequency) porque es el numero poblacional mas chico que tengo.
